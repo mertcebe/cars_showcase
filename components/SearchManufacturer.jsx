@@ -28,7 +28,7 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }) => {
                     <Combobox.Input
                         className='search-manufacturer__input'
                         displayValue={(item) => item}
-                        onChange={(event) => setQuery(event.target.value)} // Update the search query when the input changes
+                        onChange={(e) => setQuery(e.target.value)} // Update the search query when the input changes
                         placeholder='Volkswagen...'
                     />
 
@@ -61,19 +61,21 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }) => {
                                         }
                                         value={item}
                                     >
-                                        {({ selected, active }) => (
-                                            <>
-                                                <span className={`block truncate ${selected ? "font-medium" : "font-normal"}`}>
-                                                    {item}
-                                                </span>
+                                        {
+                                            ({ selected, active }) => (
+                                                <>
+                                                    <span className={`block truncate ${selected ? "font-medium" : "font-normal"}`}>
+                                                        {item}
+                                                    </span>
 
-                                                {/* Show an active blue background color if the option is selected */}
-                                                {selected ? (
-                                                    <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active ? "text-white" : "text-pribg-primary-purple"}`}
-                                                    ></span>
-                                                ) : null}
-                                            </>
-                                        )}
+                                                    {/* Show an active blue background color if the option is selected */}
+                                                    {selected ? (
+                                                        <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active ? "text-white" : "text-pribg-primary-purple"}`}
+                                                        ></span>
+                                                    ) : null}
+                                                </>
+                                            )
+                                        }
                                     </Combobox.Option>
                                 ))
                             )}
