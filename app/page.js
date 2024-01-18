@@ -5,8 +5,9 @@ import { fetchCars } from '@/utils';
 import Image from 'next/image'
 import { fuels, yearsOfProduction } from '@/constants';
 import CarCard from '@/components/CarCard';
+import ShowMore from '@/components/ShowMore';
 
-export default async function Home({searchParams}) {
+export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
@@ -42,10 +43,10 @@ export default async function Home({searchParams}) {
               ))}
             </div>
 
-            {/* <ShowMore
+            <ShowMore
               pageNumber={(searchParams.limit || 10) / 10}
               isNext={(searchParams.limit || 10) > allCars.length}
-            /> */}
+            />
           </section>
         ) : (
           <div className='home__error-container'>

@@ -1,11 +1,11 @@
 "use client"
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 
 import { Dialog, Transition } from "@headlessui/react";
 import { generateCarImageUrl } from "../utils/index";
 
-const CarImageContainer = ({generateCarImageUrl, setMainCarImage}) => {
+const CarImageContainer = ({ generateCarImageUrl, setMainCarImage }) => {
   return (
     <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
       <Image src={generateCarImageUrl} alt='car model' fill priority className='object-contain' onClick={() => {

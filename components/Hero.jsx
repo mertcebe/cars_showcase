@@ -9,6 +9,11 @@ const Hero = () => {
     }
     return (
         <div className='hero'>
+            <button onClick={() => {
+                window.scrollTo(0, 940);
+            }}>
+                btn
+            </button>
             <div className='flex-1 pt-36 padding-x'>
                 <h1 className='hero__title'>
                     Find, book, or rent a car -- quickly and easily!
