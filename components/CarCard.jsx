@@ -7,7 +7,6 @@ import CarDetails from "./CardDetails";
 
 const CarCard = ({ car }) => {
     const { city_mpg, class: clas, year, make, model, transmission, drive } = car;
-    console.log(car);
 
     const [isOpen, setIsOpen] = useState(false);
 

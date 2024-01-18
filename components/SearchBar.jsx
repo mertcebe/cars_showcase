@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import SearchManufacturer from "./SearchManufacturer";
 
 const SearchButton = ({ otherClasses }) => (
@@ -35,7 +35,7 @@ const SearchBar = () => {
   const updateSearchParams = (model, manufacturer) => {
     // Create a new URLSearchParams object using the current URL search parameters
     const searchParams = new URLSearchParams(window.location.search);
-
+  
     // Update or delete the 'model' search parameter based on the 'model' value
     if (model) {
       searchParams.set("model", model);
